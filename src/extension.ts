@@ -28,7 +28,8 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(update);
 
 	let updateAll = vscode.commands.registerCommand('nuget-manager.updateAllPackages', () => {
-		vscode.window.showInformationMessage('updateAllPackages!');
+		let yesNo = ["Yes", "No"];
+		vscode.window.showWarningMessage("Czy na pewno?", ...yesNo);
 	});
 
 	context.subscriptions.push(updateAll);
