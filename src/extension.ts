@@ -29,7 +29,15 @@ export function activate(context: vscode.ExtensionContext) {
 
 	let updateAll = vscode.commands.registerCommand('nuget-manager.updateAllPackages', () => {
 		let yesNo = ["Yes", "No"];
-		vscode.window.showWarningMessage("Czy na pewno?", ...yesNo);
+		let result = vscode.window.showWarningMessage("Czy na pewno?", ...yesNo);
+		result.then((value: string | undefined) => {
+			if (value !== undefined) {
+				vscode.window.showInformationMessage(value);
+				return;
+			}
+
+			vscode.window.showErrorMessage('updateAllPackages!');
+		});
 	});
 
 	context.subscriptions.push(updateAll);
