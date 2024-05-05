@@ -3,21 +3,114 @@
   "displayName": "NuGet Manager",
   "description": "Manage NuGet packages.",
   "version": "0.0.1",
+  "publisher": "TODO",
+  "license": "MIT",
+  "icon": "TODO 256x256min",
+  "pricing": "Free",
+  "keywords": [
+    "nuget"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ksiwczynski/nuget-manager"
+  },
+  "homepage": "https://github.com/ksiwczynski/nuget-manager",
+  "author": {
+    "name": "ksiwczynski",
+    "url": "https://github.com/ksiwczynski"
+  },
   "engines": {
     "vscode": "^1.89.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "workspaceContains:**/*.csproj"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "nuget-manager.helloWorld",
-        "title": "Hello World"
+        "command": "nuget-manager.addPackage",
+        "title": "Add package",
+        "shortTitle": "Add",
+        "icon": {
+          "dark": "TODO",
+          "light": "TODO"
+        }
+      },
+      {
+        "command": "nuget-manager.updatePackage",
+        "title": "Update package",
+        "shortTitle": "Update",
+        "icon": {
+          "dark": "TODO",
+          "light": "TODO"
+        }
+      },
+      {
+        "command": "nuget-manager.updateAllPackages",
+        "title": "Update all packages",
+        "shortTitle": "Update all",
+        "icon": {
+          "dark": "TODO",
+          "light": "TODO"
+        }
+      },
+      {
+        "command": "nuget-manager.removePackage",
+        "title": "Remove package",
+        "shortTitle": "Remove",
+        "icon": {
+          "dark": "TODO",
+          "light": "TODO"
+        }
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "icon": "TODO",
+          "id": "nuget-dependencies",
+          "title": "NuGet Manager"
+        }
+      ]
+    },
+    "views": {
+      "nuget-dependencies": [
+        {
+          "id": "nuget-installed",
+          "name": "Installed"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "nuget-manager.addPackage",
+          "group": "navigation",
+          "when": "view == nuget-installed"
+        },
+        {
+          "command": "nuget-manager.updateAllPackages",
+          "group": "navigation",
+          "when": "view == nuget-installed"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "nuget-manager.updatePackage",
+          "group": "inline",
+          "when": "view == nuget-installed"
+        },
+        {
+          "command": "nuget-manager.removePackage",
+          "group": "inline",
+          "when": "view == nuget-installed"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

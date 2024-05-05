@@ -13,14 +13,32 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('nuget-manager.helloWorld', () => {
+	let add = vscode.commands.registerCommand('nuget-manager.addPackage', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from NuGet Manager!');
+		vscode.window.showInformationMessage('addPackage!');
 	});
 
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(add);
+
+	let update = vscode.commands.registerCommand('nuget-manager.updatePackage', () => {
+		vscode.window.showInformationMessage('updatePackage!');
+	});
+
+	context.subscriptions.push(update);
+
+	let updateAll = vscode.commands.registerCommand('nuget-manager.updateAllPackages', () => {
+		vscode.window.showInformationMessage('updateAllPackages!');
+	});
+
+	context.subscriptions.push(updateAll);
+
+	let remove = vscode.commands.registerCommand('nuget-manager.removePackage', () => {
+		vscode.window.showInformationMessage('removePackage!');
+	});
+
+	context.subscriptions.push(remove);
 }
 
 // This method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
