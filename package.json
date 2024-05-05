@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "publisher": "TODO",
   "license": "MIT",
-  "icon": "TODO 256x256min",
+  "icon": "/src/icons/nuget.png",
   "pricing": "Free",
   "keywords": [
     "nuget"
@@ -36,8 +36,8 @@
         "title": "Add package",
         "shortTitle": "Add",
         "icon": {
-          "dark": "TODO",
-          "light": "TODO"
+          "dark": "/src/icons/add-dark.svg",
+          "light": "/src/icons/add-light.svg"
         }
       },
       {
@@ -45,8 +45,8 @@
         "title": "Update package",
         "shortTitle": "Update",
         "icon": {
-          "dark": "TODO",
-          "light": "TODO"
+          "dark": "/src/icons/cloud-download-dark.svg",
+          "light": "/src/icons/cloud-download-light.svg"
         }
       },
       {
@@ -54,8 +54,8 @@
         "title": "Update all packages",
         "shortTitle": "Update all",
         "icon": {
-          "dark": "TODO",
-          "light": "TODO"
+          "dark": "/src/icons/cloud-download-dark.svg",
+          "light": "/src/icons/cloud-download-light.svg"
         }
       },
       {
@@ -63,15 +63,15 @@
         "title": "Remove package",
         "shortTitle": "Remove",
         "icon": {
-          "dark": "TODO",
-          "light": "TODO"
+          "dark": "/src/icons/remove-dark.svg",
+          "light": "/src/icons/remove-light.svg"
         }
       }
     ],
     "viewsContainers": {
       "activitybar": [
         {
-          "icon": "TODO",
+          "icon": "/src/icons/nuget-menu.svg",
           "id": "nuget-dependencies",
           "title": "NuGet Manager"
         }
